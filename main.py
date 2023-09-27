@@ -74,17 +74,23 @@ sv_step		=	parameter["sv_step"]
 BUFFER_SIZE	=	parameter["BUFF_S"]
 lambda0     =   parameter["lambda0"]
 lambda1     =   parameter["lambda1"]
+dataset     =   parameter["dataset"]
 
 coeff = np.sqrt(2 * epsilon * T)
 
 number_of_emptyings = int( NUM_MIS/BUFFER_SIZE )
 epochs = number_of_emptyings * BUFFER_SIZE * sv_step
 cprint(f"\tepochs\t : {epochs}" , "magenta")
-    
-(x_train, y_train, x_test, y_test) = functions.MNIST_MAKE_DATA("./", sqrt_N0, P, Ptest)
+
+if dataset == "mnist":
+    (x_train, y_train, x_test, y_test) = functions.MNIST_MAKE_DATA("./", sqrt_N0, P, Ptest)
+elif dataset== "cifar10":
+    (x_train, y_train, x_test, y_test) = functions.CFAR_MAKE_DATA("./", sqrt_N0, P, Ptest)
+else:
+    cprint("Errore: dataset non conosciuto.")
+    exit()
 
 x_train = x_train.to(device)
-
 y_train = y_train.to(device)
 x_test = x_test.to(device)
 y_test = y_test.to(device)
