@@ -15,7 +15,7 @@ def reg_loss( output, target, net, T, lambda0, lambda1 ):
     loss = 0.5*torch.sum(torch.square((output - target))) + ( T * lambda1 ) / 2 * torch.sum(torch.square(net.second_layer.weight)) + ( T * lambda0 ) / 2 * torch.sum(torch.square(net.first_layer.weight))
     return loss
 
-def MNIST_MAKE_DATA(current_working_path, sqrt_N0, P, Ptest):
+def MNIST_MAKE_DATA(current_working_path, sqrt_N0, P, Ptest, noise):
     
 	trans = transforms.Compose([
 			transforms.Resize(size=sqrt_N0),
@@ -66,12 +66,16 @@ def MNIST_MAKE_DATA(current_working_path, sqrt_N0, P, Ptest):
 
 	print(f"\tsize del dataset di train: \t{x_train.size()} \t- {y_train.size()}")
 	print(f"\tsize del dataset di test: \t{x_test.size()} \t- {y_test.size()}")
+
+	x_train = x_train + torch.randn_like(x_train)*noise
+	x_test = x_test + torch.randn_like(x_test)*noise
+
         
 	return x_train, y_train, x_test, y_test
 
 
 
-def CFAR_MAKE_DATA(current_working_path, sqrt_N0, P, Ptest):
+def CFAR_MAKE_DATA(current_working_path, sqrt_N0, P, Ptest, noise):
     
 	trans = transforms.Compose([
 			transforms.Resize(size=sqrt_N0),
@@ -123,5 +127,8 @@ def CFAR_MAKE_DATA(current_working_path, sqrt_N0, P, Ptest):
 
 	print(f"\tsize del dataset di train: \t{x_train.size()} \t- {y_train.size()}")
 	print(f"\tsize del dataset di test: \t{x_test.size()} \t- {y_test.size()}")
+
+	x_train = x_train + torch.randn_like(x_train)*noise
+	x_test = x_test + torch.randn_like(x_test)*noise
         
 	return x_train, y_train, x_test, y_test
