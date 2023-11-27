@@ -52,8 +52,8 @@ while flag_for_output:
     string_output_file_test  = working_path + "test_loss_" + str(count) + ".npy"
     flag_for_output = os.path.exists(string_output_file_train)
     
-
-seed = abs(int(hash(working_path)/10000000000)) + count
+seed = abs(int(hash(working_path)/10000000000)) + count    
+torch.manual_seed(seed)
     
 cprint("\nParametri caricati:", "green")
 for (param_name, param_value) in parameter.items():
