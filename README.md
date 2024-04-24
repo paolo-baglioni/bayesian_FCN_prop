@@ -30,6 +30,7 @@ This script is straightforward to use. Parameters can be directly modified withi
 
 ```bash
 python3 proportionalTheory.py
+```
 
 # Contribution
 Contributions to this project are welcome! Feel free to open issues for bug reports or feature requests, and submit pull requests for enhancements.
