@@ -18,7 +18,7 @@ This command will initiate a Monte Carlo simulation using the CIFAR$10$ dataset 
 
 For details on parameter notation, please consult our paper [Predictive power of a Bayesian effective action for fully-connected one hidden layer neural networks in the proportional limit](https://arxiv.org/abs/2401.11004)
 
-Additional simulation parameter configurations can be created by utilizing the provided Jupyter notebook script mk_dir.ipynb. For details on parameter notation, please consult the associated paper: XXX.
+Additional simulation parameter configurations can be created by utilizing the provided Jupyter notebook script mk_dir.ipynb.
 
 # Contribution
 Contributions to this project are welcome! Feel free to open issues for bug reports or feature requests, and submit pull requests for enhancements.
