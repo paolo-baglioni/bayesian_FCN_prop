@@ -11,7 +11,7 @@ def S(x):
     HH_inv = np.linalg.inv(HH)
     part_1 = -1 + x + np.log(1/x)
     part_2 = alpha1/P * np.sum(np.log(T + x*K_eigval/lambda1))
-    part_3 = alpha1 * lambda1 / P * np.dot(ytilde, np.dot(HH_inv, ytilde))
+    part_3 = alpha1/P * np.dot(ytilde, np.dot(HH_inv, ytilde))
     return (part_1 + part_2 + part_3)
 
 sqrt_N0  = 28
