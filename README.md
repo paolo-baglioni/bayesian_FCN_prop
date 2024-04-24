@@ -20,6 +20,17 @@ For details on parameter notation, please consult our paper [Predictive power of
 
 Additional simulation parameter configurations can be created by utilizing the provided Jupyter notebook script mk_dir.ipynb.
 
+# Bayesian Inference with Normalized Kernel in Proportional Limit
+
+The `proportionalTheory.py` script is a simple Python script that computes Bayesian inference with a normalized kernel in the proportional limit. It operates with the same parameters as described previously, but with the parameter $N_1$ scaling in the range [300,5700,100]. 
+
+## Usage
+
+This script is straightforward to use. Parameters can be directly modified within the script itself. To execute the script, simply run it using a Python interpreter.
+
+```bash
+python3 proportionalTheory.py
+
 # Contribution
 Contributions to this project are welcome! Feel free to open issues for bug reports or feature requests, and submit pull requests for enhancements.
 
