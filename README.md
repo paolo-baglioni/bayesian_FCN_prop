@@ -14,7 +14,9 @@ To run the code, follow these steps:
 python3 main.py "./data/cifar10_28_500_1000_1000_0.01_0.001_False_1.0_1.0_0.0/parameter.json" > output.txt
 ```
 
-This command will initiate a Monte Carlo simulation using the CIFAR-10 dataset with images resized to 28x20 pixels. The neural network architecture includes a hidden layer with 500 neurons, $P=P_{\text{test}}=1000$ data points, temperature $T=0.01$, and a learning rate of $0.001$. The network is trained without biases and without Gaussian noise in the data. Gaussian priors with $\lambda_1=\lambda_0=1.0$ are used. For further information, refer to the parameters specified in the parameter.json file.
+This command will initiate a Monte Carlo simulation using the CIFAR$10$ dataset with images resized to $28\times28$ pixels. The neural network architecture includes a hidden layer with $N_1=500$, $P=P_{\text{test}}=1000$, temperature $T=0.01$, and a learning rate of $0.001$. The network is trained without biases and without Gaussian noise in the data. Gaussian priors with $\lambda_1=\lambda_0=1.0$ are used. For further information, refer to the parameters specified in the parameter.json file.
+
+For details on parameter notation, please consult our paper [Predictive power of a Bayesian effective action for fully-connected one hidden layer neural networks in the proportional limit](https://arxiv.org/abs/2401.11004)
 
 Additional simulation parameter configurations can be created by utilizing the provided Jupyter notebook script mk_dir.ipynb. For details on parameter notation, please consult the associated paper: XXX.
 
