@@ -1,0 +1,17 @@
+{
+    "sqrt_N0": 28,
+    "N0": 784,
+    "N1": 500,
+    "P": 1000,
+    "Ptest": 1000,
+    "T": 0.01,
+    "epsilon": 0.001,
+    "bias": 0,
+    "NUM_MIS": 500000,
+    "sv_step": 10,
+    "BUFF_S": 1000,
+    "lambda0": 1.0,
+    "lambda1": 1.0,
+    "dataset": "cifar10",
+    "noise": 0.0
+}
